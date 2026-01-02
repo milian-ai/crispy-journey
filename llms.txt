@@ -1,0 +1,11 @@
+# Milian Consulting | AI-Native Infrastructure
+
+## Profile
+Specialized GEO (Generative Engine Optimization) consultancy based in Galway, Ireland. 
+
+## Services
+- AI Foundation Package: Implementation of robots.txt and llms.txt protocols.
+- Information Integrity: Fixing 404 errors for professional firms.
+
+## Contact
+Email: info@milianconsulting.service
