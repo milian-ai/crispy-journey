@@ -10,6 +10,7 @@
             --apple-gray: #86868b; 
             --apple-bg: #f5f5f7; 
             --tech-green: #2ecc71; 
+            --link-blue: #0066cc;
         }
 
         body { 
@@ -28,7 +29,7 @@
         }
 
         @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(40px); }
+            0% { opacity: 0; transform: translateY(30px); }
             100% { opacity: 1; transform: translateY(0); }
         }
 
@@ -40,19 +41,25 @@
             padding: 80px 20px 40px; 
         }
 
-        .logo-container {
-            min-height: 140px; /* Reserves space while image loads/animates */
-        }
-
-        .logo-img {
-            width: 140px; 
-            height: auto;
-            border-radius: 24px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
-            
-            /* Animation */
+        /* CSS Logo Fallback - Always works even without logo.jpg */
+        .logo-wrapper {
+            width: 100px;
+            height: 100px;
+            background: var(--tech-green);
+            border-radius: 22%; /* Squircle-ish */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(46, 204, 113, 0.3);
             opacity: 0;
             animation: fadeInScale 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .logo-m {
+            color: white;
+            font-size: 50px;
+            font-weight: 800;
+            font-family: "Georgia", serif;
         }
 
         /* --- Hero Text --- */
@@ -76,14 +83,16 @@
         }
 
         .secondary-link {
-            color: #0066cc;
+            color: var(--link-blue);
             text-decoration: none;
             font-size: 20px;
             margin-top: 25px;
             display: inline-block;
+            font-weight: 500;
             opacity: 0;
             animation: fadeInUp 1s ease-out 1.0s forwards;
         }
+        .secondary-link:hover { text-decoration: underline; }
 
         /* --- Service Tiles --- */
         .container { 
@@ -103,21 +112,24 @@
             border-radius: 32px; 
             padding: 48px; 
             text-align: center; 
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 0;
+            border: 1px solid transparent;
         }
 
-        .tile:nth-child(1) { animation: fadeInUp 1s ease-out 1.4s forwards; }
-        .tile:nth-child(2) { animation: fadeInUp 1s ease-out 1.7s forwards; }
+        .tile:nth-child(1) { animation: fadeInUp 1s ease-out 1.3s forwards; }
+        .tile:nth-child(2) { animation: fadeInUp 1s ease-out 1.5s forwards; }
 
         .tile:hover { 
-            transform: scale(1.02); 
+            transform: translateY(-8px); 
             background: #fff; 
+            border-color: #d2d2d7;
             box-shadow: 0 20px 40px rgba(0,0,0,0.08); 
         }
 
-        .tile h2 { font-size: 34px; margin-bottom: 12px; }
-        .tile .price { font-size: 52px; font-weight: 700; margin: 24px 0; }
+        .tile h2 { font-size: 34px; margin-bottom: 12px; font-weight: 600; }
+        .tile p { color: var(--apple-gray); font-size: 18px; line-height: 1.4; }
+        .tile .price { font-size: 48px; font-weight: 700; margin: 24px 0; letter-spacing: -0.01em; }
 
         .btn { 
             display: inline-block; 
@@ -127,6 +139,7 @@
             border-radius: 980px; 
             text-decoration: none; 
             font-weight: 600; 
+            font-size: 17px;
             transition: opacity 0.3s;
         }
         .btn:hover { opacity: 0.8; }
@@ -137,46 +150,51 @@
             color: var(--apple-gray); 
             font-size: 14px; 
             opacity: 0; 
-            animation: fadeInUp 1s ease-out 2.0s forwards;
+            animation: fadeInUp 1s ease-out 1.8s forwards;
+            line-height: 1.6;
         }
 
         @media (max-width: 768px) { 
             .grid { grid-template-columns: 1fr; } 
             .hero h1 { font-size: 48px; } 
+            .header { padding-top: 40px; }
         }
     </style>
 </head>
 <body>
 
 <header class="header">
-    <div class="logo-container">
-        <img src="logo.jpg" alt="Milian Consulting Monogram" class="logo-img">
+    <div class="logo-wrapper">
+        <span class="logo-m">M</span>
     </div>
     
     <section class="hero">
         <h1>Milian Consulting</h1>
-        <p>Intelligence Infrastructure</p>
-        <a href="#" class="secondary-link">Learn more ></a>
+        <p>Intelligence Infrastructure for the AI Era.</p>
+        <a href="llms.txt" class="secondary-link">Explore the AI Protocol →</a>
     </section>
 </header>
 
 <main class="container">
     <div class="grid">
         <div class="tile">
-            <h2>Strategy</h2>
-            <p class="price">AI Scale</p>
-            <a href="#" class="btn">Get Started</a>
+            <h2>AI Foundation</h2>
+            <p>Full optimization for generative search discovery.</p>
+            <div class="price">€1,499</div>
+            <a href="mailto:info@milianconsulting.services" class="btn">Get Started</a>
         </div>
+
         <div class="tile">
-            <h2>Infrastructure</h2>
-            <p class="price">Systems</p>
-            <a href="#" class="btn">Learn More</a>
+            <h2>GEO Strategy</h2>
+            <p>Bespoke infrastructure for European firms.</p>
+            <div class="price">Custom</div>
+            <a href="mailto:info@milianconsulting.services" class="btn">Inquire</a>
         </div>
     </div>
 </main>
 
 <footer class="footer">
-    <p>&copy; 2024 Milian Consulting. All rights reserved.</p>
+    <p>&copy; 2026 Milian Consulting. All rights reserved.<br>Galway, Ireland.</p>
 </footer>
 
 </body>
