@@ -5,76 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milian Consulting | Intelligence Infrastructure</title>
     <style>
-        :root { --apple-black: #1d1d1f; --apple-gray: #86868b; --apple-bg: #f5f5f7; --link-blue: #0066cc; }
+        :root { --apple-black: #1d1d1f; --apple-gray: #86868b; --apple-bg: #f5f5f7; --link-blue: #0066cc; --tech-green: #2ecc71; }
         body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; margin: 0; background: #fff; color: var(--apple-black); -webkit-font-smoothing: antialiased; }
         
-        /* Hero */
-        .hero { text-align: center; padding: 120px 20px; }
-        .hero h1 { font-size: 56px; font-weight: 600; letter-spacing: -0.015em; margin: 0; }
-        .hero p { font-size: 26px; color: var(--apple-gray); margin-top: 10px; }
+        /* Navigation / Header with Logo */
+        .header { display: flex; flex-direction: column; align-items: center; padding: 80px 20px 40px; }
+        
+        /* The Logo Design (CSS Version of Logo #2) */
+        .logo-container { width: 80px; height: 80px; background: var(--tech-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; position: relative; box-shadow: 0 10px 20px rgba(46, 204, 113, 0.2); }
+        .logo-m { color: white; font-size: 42px; font-weight: 800; font-family: "Georgia", serif; position: relative; z-index: 2; }
+        /* Decorative circuitry lines representing the "Creative C" and chip elements */
+        .logo-container::after { content: ''; position: absolute; width: 60px; height: 60px; border: 3px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: transparent; transform: rotate(-45deg); }
+
+        /* Increased Heading Size */
+        .hero h1 { font-size: 72px; font-weight: 700; letter-spacing: -0.02em; margin: 0; color: var(--apple-black); }
+        .hero p { font-size: 28px; color: var(--apple-gray); margin-top: 12px; font-weight: 400; }
 
         /* Bento Grid */
         .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .tile { background: var(--apple-bg); border-radius: 28px; padding: 40px; text-align: center; transition: transform 0.3s ease; }
-        .tile:hover { transform: scale(1.01); }
-        .tile h2 { font-size: 32px; margin-bottom: 10px; }
-        .tile .price { font-size: 48px; font-weight: 600; margin: 20px 0; }
-        .tile p { color: var(--apple-gray); font-size: 19px; }
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .tile { background: var(--apple-bg); border-radius: 32px; padding: 48px; text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid transparent; }
+        .tile:hover { transform: translateY(-5px); border-color: #d2d2d7; background: #fff; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .tile h2 { font-size: 34px; margin-bottom: 12px; font-weight: 600; }
+        .tile .price { font-size: 52px; font-weight: 700; margin: 24px 0; letter-spacing: -0.01em; }
+        .tile p { color: var(--apple-gray); font-size: 20px; line-height: 1.4; }
         
-        /* Lists */
-        ul { list-style: none; padding: 0; text-align: left; display: inline-block; margin: 20px 0; }
-        li { margin: 12px 0; font-size: 17px; display: flex; align-items: center; }
-        li::before { content: "✓"; color: #00ff00; margin-right: 10px; font-weight: bold; }
-
-        /* Buttons */
-        .btn { display: inline-block; background: var(--apple-black); color: #fff; padding: 14px 28px; border-radius: 980px; text-decoration: none; font-weight: 600; font-size: 17px; margin-top: 20px; }
-        .secondary-link { color: var(--link-blue); text-decoration: none; font-size: 19px; display: block; margin-top: 20px; }
+        /* Buttons & Links */
+        .btn { display: inline-block; background: var(--apple-black); color: #fff; padding: 16px 32px; border-radius: 980px; text-decoration: none; font-weight: 600; font-size: 18px; margin-top: 24px; transition: opacity 0.2s; }
+        .btn:hover { opacity: 0.8; }
+        .secondary-link { color: var(--link-blue); text-decoration: none; font-size: 20px; margin-top: 30px; display: inline-block; font-weight: 500; }
         .secondary-link:hover { text-decoration: underline; }
 
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .hero h1 { font-size: 40px; } }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } .hero h1 { font-size: 48px; } }
     </style>
 </head>
 <body>
 
-<section class="hero">
-    <h1>Milian Consulting</h1>
-    <p>Infrastructure for the AI Era.</p>
-    <a href="llms.txt" class="secondary-link">View AI Protocol (llms.txt) →</a>
-</section>
+<header class="header">
+    <div class="logo-container">
+        <span class="logo-m">M</span>
+    </div>
+    <section class="hero">
+        <h1>Milian Consulting</h1>
+        <p>Intelligence Infrastructure for the AI Era.</p>
+        <a href="llms.txt" class="secondary-link">Explore the AI Protocol →</a>
+    </section>
+</header>
 
 <div class="container">
     <div class="grid">
         <div class="tile">
             <h2>AI Foundation</h2>
-            <p>Optimizing your business for generative discovery.</p>
+            <p>Full optimization for generative search discovery.</p>
             <div class="price">€1,499</div>
-            <ul>
-                <li>Full llms.txt protocol setup</li>
-                <li>GEO (Generative Engine Optimization)</li>
-                <li>Search Visibility Audit</li>
-            </ul>
-            <br>
             <a href="mailto:info@milianconsulting.services" class="btn">Get Started</a>
         </div>
 
         <div class="tile">
             <h2>GEO Strategy</h2>
-            <p>Localized consultancy for Galway & European firms.</p>
+            <p>Bespoke infrastructure for European firms.</p>
             <div class="price">Custom</div>
-            <ul>
-                <li>Bespoke infrastructure roadmap</li>
-                <li>On-site specialized training</li>
-                <li>Quarterly performance reviews</li>
-            </ul>
-            <br>
-            <a href="mailto:info@milianconsulting.services" class="btn">Contact Us</a>
+            <a href="mailto:info@milianconsulting.services" class="btn">Inquire</a>
         </div>
     </div>
 </div>
 
-<footer style="text-align:center; padding: 60px; color: var(--apple-gray);">
-    &copy; 2026 Milian Consulting | Galway, Ireland.
+<footer style="text-align:center; padding: 80px 20px; color: var(--apple-gray); font-size: 14px;">
+    &copy; 2026 Milian Consulting. All rights reserved. <br> Galway, Ireland.
 </footer>
 
 </body>
