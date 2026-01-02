@@ -1,0 +1,7 @@
+# Milian Consulting | AI-Native Infrastructure
+## Profile
+Specialized GEO consultancy based in Galway, Ireland. 
+## Services
+- AI Foundation Package: Implementation of llms.txt protocols.
+## Contact
+Email: info@milianconsulting.services
