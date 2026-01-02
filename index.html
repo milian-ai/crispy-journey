@@ -40,18 +40,22 @@
             padding: 80px 20px 40px; 
         }
 
+        .logo-container {
+            min-height: 140px; /* Reserves space while image loads/animates */
+        }
+
         .logo-img {
-            width: 140px; /* Adjust size of your logo here */
+            width: 140px; 
             height: auto;
-            border-radius: 24px; /* Softens the corners of the image */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Adds depth to the metallic look */
+            border-radius: 24px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
             
-            /* Animation: First to appear */
+            /* Animation */
             opacity: 0;
             animation: fadeInScale 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        /* --- Hero Text Staggered Animations --- */
+        /* --- Hero Text --- */
         .hero { text-align: center; margin-top: 30px; }
 
         .hero h1 { 
@@ -59,8 +63,6 @@
             font-weight: 700; 
             letter-spacing: -0.02em; 
             margin: 0; 
-            
-            /* Animation: Delay 0.4s */
             opacity: 0;
             animation: fadeInUp 1s ease-out 0.4s forwards;
         }
@@ -69,8 +71,6 @@
             font-size: 28px; 
             color: var(--apple-gray); 
             margin-top: 12px; 
-            
-            /* Animation: Delay 0.7s */
             opacity: 0;
             animation: fadeInUp 1s ease-out 0.7s forwards;
         }
@@ -81,8 +81,6 @@
             font-size: 20px;
             margin-top: 25px;
             display: inline-block;
-            
-            /* Animation: Delay 1.0s */
             opacity: 0;
             animation: fadeInUp 1s ease-out 1.0s forwards;
         }
@@ -106,18 +104,11 @@
             padding: 48px; 
             text-align: center; 
             transition: transform 0.4s ease, box-shadow 0.4s ease;
-            
-            /* Initial State for Animation */
             opacity: 0;
         }
 
-        /* Staggered Tile Entry */
-        .tile:nth-child(1) {
-            animation: fadeInUp 1s ease-out 1.4s forwards; /* Delay 1.4s */
-        }
-        .tile:nth-child(2) {
-            animation: fadeInUp 1s ease-out 1.7s forwards; /* Delay 1.7s */
-        }
+        .tile:nth-child(1) { animation: fadeInUp 1s ease-out 1.4s forwards; }
+        .tile:nth-child(2) { animation: fadeInUp 1s ease-out 1.7s forwards; }
 
         .tile:hover { 
             transform: scale(1.02); 
@@ -140,14 +131,11 @@
         }
         .btn:hover { opacity: 0.8; }
 
-        /* --- Footer --- */
         .footer {
             text-align: center; 
             padding: 80px 20px; 
             color: var(--apple-gray); 
             font-size: 14px; 
-            
-            /* Animation: Delay 2.0s */
             opacity: 0; 
             animation: fadeInUp 1s ease-out 2.0s forwards;
         }
@@ -161,7 +149,35 @@
 <body>
 
 <header class="header">
-    <img src="Gemini_Generated_Image_m31x5m31x5m31x5m.jpg" alt="Milian Consulting Monogram" class="logo-img">
+    <div class="logo-container">
+        <img src="logo.jpg" alt="Milian Consulting Monogram" class="logo-img">
+    </div>
     
     <section class="hero">
-        <h1>Milian Consulting
+        <h1>Milian Consulting</h1>
+        <p>Intelligence Infrastructure</p>
+        <a href="#" class="secondary-link">Learn more ></a>
+    </section>
+</header>
+
+<main class="container">
+    <div class="grid">
+        <div class="tile">
+            <h2>Strategy</h2>
+            <p class="price">AI Scale</p>
+            <a href="#" class="btn">Get Started</a>
+        </div>
+        <div class="tile">
+            <h2>Infrastructure</h2>
+            <p class="price">Systems</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2024 Milian Consulting. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
